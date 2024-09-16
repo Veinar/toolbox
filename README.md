@@ -1,6 +1,7 @@
 # Network Utility Toolbox Docker Image
 
 ![GitHub License](https://img.shields.io/github/license/veinar/toolbox)
+![Contributions are welcome](https://img.shields.io/badge/contributions-welcome-green)
 
 
 This Docker image is based on `alpine:3.20` and includes a collection of essential network utilities and tools to help with network diagnostics, testing, and troubleshooting.
@@ -28,3 +29,31 @@ Pull the Docker image and start a container with access to these tools:
 ```bash
 docker pull your-docker-image:latest
 docker run -it your-docker-image:latest
+```
+
+## Kubernetes and OpenShift
+
+You can also deploy this toolbox on a Kubernetes (K8s) or OpenShift (OCP) cluster using the provided `pod.yaml` or `deployment.yaml` files.
+
+To deploy as `pod`:
+```bash
+kubectl apply -f pod.yaml
+oc apply -f pod.yaml
+```
+
+To deploy as `deployment`:
+```bash
+kubectl apply -f deployment.yaml
+oc apply -f deployment.yaml
+```
+
+### OpenShift-specific instructions:
+
+If deploying on OpenShift, you may need to grant the necessary permissions for the container to run properly:
+```bash
+oc adm policy add-scc-to-user anyuid -z default
+```
+
+## Contributions
+
+Contributions are welcome! Feel free to add any additional tools that you find useful for network diagnostics or system troubleshooting. Simply edit the Dockerfile to include the packages you need, and submit a pull request.
