@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: toolbox
+  labels:
+    purpose: troubleshooting
+    app: toolbox
+spec:
+  containers:
+  - name: toolbox
+    image: <repository_url>/toolbox:latest
+    command: ["/bin/sleep", "infinite"]
+  restartPolicy: Always
