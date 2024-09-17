@@ -27,7 +27,7 @@ This Docker image is based on `alpine:3.20` and includes a collection of essenti
 Pull the Docker image and start a container with access to these tools:
 
 ```bash
-docker pull your-docker-image:latest
+docker build . -t your-docker-image:latest
 docker run -it your-docker-image:latest
 ```
 
