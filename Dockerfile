@@ -1,7 +1,7 @@
 FROM alpine:3.20
 
 # Install tools
-RUN apk update && apk add --no-cache \
+RUN apk add --no-cache \
     arp-scan \
     bash \
     bind-tools \
@@ -14,4 +14,4 @@ RUN apk update && apk add --no-cache \
     openssl \
     traceroute \
     vim \
-    wget 
+    wget
